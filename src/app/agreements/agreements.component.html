@@ -1,0 +1,17 @@
+<ion-content class="ion-text-center ion-no-padding">
+    <img class="image-style" src="assets/img/svg/ask.svg">
+
+    <h2 class="lh-32 title ion-no-margin">Приложение создано для онлайн просмотра кредитов, займов и карт</h2>
+
+    <p class="fs-title lh-24 ion-no-margin description">
+      Используя приложение “Деньги на карту” Вы подтверждаете, что принимаете и ознакомлены с
+      <a class="color-style" routerLink="/privacy-policy">политикой конфиденциальности</a>.
+    </p>
+
+    <div (click)="check = !check">
+        <input [checked]="check" type="checkbox">
+        <span class="fs-12 pl-8">Я принимаю пользовательское соглашение</span>
+    </div>
+
+  <ion-button [disabled]="!check" routerLink="/home" class="background-style button-accept" expand="block">Принять</ion-button>
+</ion-content>

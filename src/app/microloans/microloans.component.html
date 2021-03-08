@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <ion-buttons>
+      <ion-back-button class="back-button" text="" icon="chevron-back-outline" defaultHref="/home"></ion-back-button>
+      <ion-title>Микрозаймы</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngFor="let microloan of microloans">
+    <ion-card class="ion-padding">
+      <ion-card-header class="ion-no-padding ion-padding-bottom ion-margin-bottom">
+        <ion-toolbar>
+          <ion-title>
+            <img [src]="microloan.image_url" width="100">
+          </ion-title>
+          <ion-text slot="end">
+            <!--<div>
+              <img src="assets/img/svg/vector.svg">
+              <img src="assets/img/svg/vector.svg">
+              <img src="assets/img/svg/vector.svg">
+              <img src="assets/img/svg/vector.svg">
+              <img src="assets/img/svg/vector.svg">
+            </div>-->
+            <ng-container *ngFor="let rating_image of microloan.rating_images">
+              <img [src]="rating_image">
+            </ng-container>
+            <div class="mt-7">
+              <span class="chat-number">12</span>
+              <img src="assets/img/svg/chat.svg">
+            </div>
+          </ion-text>
+        </ion-toolbar>
+      </ion-card-header>
+
+      <ion-card-content class="ion-no-padding">
+        <div>
+          <ion-row>
+            <ion-col class="d-flex ion-align-items-center ion-padding-top">
+              <img src="assets/img/svg/coins.svg">
+              <span class="ion-margin-start">{{microloan.sum_one}}</span>
+            </ion-col>
+            <ion-col class="d-flex ion-align-items-center ion-padding-top">
+              <img src="assets/img/svg/contract.svg">
+              <span class="ion-margin-start">{{microloan.dokuments}}</span>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="d-flex ion-align-items-center ion-padding-top">
+              <img src="assets/img/svg/calendar.svg">
+              <span class="ion-margin-start">{{microloan.days_info}}</span>
+            </ion-col>
+            <ion-col class="d-flex ion-align-items-center ion-padding-top">
+              <img src="assets/img/svg/clock.svg">
+              <span class="ion-margin-start">{{microloan.scorost}}</span>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="d-flex ion-align-items-center ion-padding-top">
+              <img src="assets/img/svg/discount.svg">
+              <span class="ion-margin-start">{{microloan.percent}}</span>
+            </ion-col>
+          </ion-row>
+        </div>
+        <ion-button (click)="moreDetails(microloan)" class="background-style ion-margin-top" expand="block">Подробнее</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+</ion-content>

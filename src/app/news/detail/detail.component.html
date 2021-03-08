@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <div class="d-flex ion-align-items-center">
+      <ion-buttons>
+        <ion-back-button class="back-button" text="" icon="chevron-back-outline" defaultHref="/news"></ion-back-button>
+      </ion-buttons>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-img [src]="news.image_url"></ion-img>
+
+    <ion-card-header>
+      <ion-card-subtitle>{{news.title}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <div [innerHTML]="news?.text"></div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

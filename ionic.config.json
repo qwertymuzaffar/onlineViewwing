@@ -1,0 +1,8 @@
+{
+  "name": "onlineViewwing",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

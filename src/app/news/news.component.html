@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <div class="d-flex ion-align-items-center">
+      <ion-buttons>
+        <ion-back-button class="back-button" text="" icon="chevron-back-outline" defaultHref="/home"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Новости</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card *ngFor="let n of news" (click)="detail(n)">
+
+    <ion-img [src]="n.image_url"></ion-img>
+
+    <ion-card-header>
+      <ion-card-subtitle>{{n.title}}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+</ion-content>

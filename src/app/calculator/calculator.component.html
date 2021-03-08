@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <ion-buttons>
+      <ion-back-button class="back-button" text="" icon="chevron-back-outline" defaultHref="/home"></ion-back-button>
+      <ion-title>Калькулятор</ion-title>
+    </ion-buttons>
+    <img (click)="reset()" class="ion-padding-end" slot="end" src="assets/img/svg/refresh.svg">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-no-padding">
+  <ion-card>
+    <ion-card-content>
+      <form [formGroup]="myForm">
+        <ion-list>
+          <ion-item class="ion-no-padding fs-title">
+            <ion-label position="floating">Сумма кредита</ion-label>
+            <ion-input formControlName="sum" type="number"></ion-input>
+          </ion-item>
+
+          <ion-item class="ion-no-padding fs-title">
+            <ion-label position="floating">Ставка по кредиту</ion-label>
+            <ion-input formControlName="percent" type="number"></ion-input>
+          </ion-item>
+
+          <ion-item class="ion-no-padding fs-title">
+            <ion-label position="floating">Срок кредита (мес)</ion-label>
+            <ion-input formControlName="term" type="number"></ion-input>
+          </ion-item>
+
+          <ion-button (click)="calculateResults()" expand="block" class="background-style button-calculate">Расчитать</ion-button>
+        </ion-list>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <div class="d-flex ion-justify-content-between ion-padding-bottom">
+        <span>Исходная сумма:</span>
+        <strong>{{originalAmount}} руб</strong>
+      </div>
+
+      <div class="d-flex ion-justify-content-between ion-padding-bottom">
+        <span>Проценты по кредиту:</span>
+        <strong>{{calculatedInterest}} руб</strong>
+      </div>
+      <div class="d-flex ion-justify-content-between ion-padding-bottom">
+        <span>Ежемесячный платеж:</span>
+        <strong>{{calculatedPayments}} руб</strong>
+      </div>
+      <div class="d-flex ion-justify-content-between ion-padding-bottom">
+        <span>Процент переплаты:</span>
+        <strong>{{calculatedPercent}}%</strong>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

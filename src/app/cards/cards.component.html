@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <ion-buttons>
+      <ion-back-button class="back-button" text="" icon="chevron-back-outline" defaultHref="/home"></ion-back-button>
+      <ion-title>Карты</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngFor="let card of cards">
+    <ion-card>
+      <ion-card-content>
+        <img [src]="card.image_url" width="343">
+        <ion-button [href]="card.url" class="background-style ion-margin-top" expand="block">Оформить</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+</ion-content>

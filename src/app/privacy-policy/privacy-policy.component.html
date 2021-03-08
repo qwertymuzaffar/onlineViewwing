@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar class="header">
+    <ion-buttons>
+      <ion-back-button class="back-button" text="" icon="chevron-back-outline" defaultHref="/home"></ion-back-button>
+      <ion-title>Политика конфиден...</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2 class="fs-title lh-24 color-style ion-no-margin title">{{policy?.title}}</h2>
+  <ion-text>
+    <p [innerHTML]="policy?.text" class="fs-12 lh-24 description"></p>
+  </ion-text>
+</ion-content>
